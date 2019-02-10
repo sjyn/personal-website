@@ -7,13 +7,10 @@ let importManager;
 })();
 
 function homePressed() {
-  // deSelectNavBarItems();
   importManager.loadContent('home');
-  // selectNavBarActiveItems(['home-nav']);
 }
 
 function projectsPressed(project) {
-  // deSelectNavBarItems();
   const navs = [];
   if (!!project) {
     importManager.loadContent(`${project}`);

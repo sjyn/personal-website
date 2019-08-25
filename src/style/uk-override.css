@@ -1,0 +1,19 @@
+.uk-navbar-container {
+  background: #542B72 !important;
+}
+
+.uk-navbar-container li a {
+  color: #9576AB !important;
+}
+
+.uk-navbar-container li.uk-active a,
+.uk-navbar-container li:hover a:hover,
+.uk-navbar-container li:hover a.uk-open {
+  color: white !important;
+}
+
+.uk-navbar-dropdown {
+  background: #542B72;
+  margin-top: -20px;
+  padding: 12px;
+}

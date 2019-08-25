@@ -1,26 +1,60 @@
-'use strict';
+const HOME = 'home';
+const CONTACT = 'contact';
+const PROJECTS = 'projects/projects';
+const RECIPIECE = 'projects/recipiece';
 
-let importManager;
-(function() {
-  importManager = new ImportManager();
-  importManager.loadContent('home');
-})();
+let darkMode = true;
 
-function homePressed() {
-  importManager.loadContent('home');
+function loadHtml(routeId) {
+  const req = new XMLHttpRequest();
+  req.open('GET', `./html/${routeId}.html`);
+  req.send();
+  req.onload = () => {
+    document.getElementById('main-content').innerHTML = req.responseText;
+  };
 }
 
-function projectsPressed(project) {
-  const navs = [];
-  if (!!project) {
-    importManager.loadContent(`${project}`);
-    navs.push(`${project}`);
+function setFocused(navId) {
+  const navs = document.querySelectorAll('[id$=nav]');
+  navs.forEach((nav) => {
+    nav.classList.remove('uk-active');
+  });
+  document.getElementById(`${navId}-nav`).classList.add('uk-active');
+}
+
+function toggleDarkMode() {
+  const styleLink = document.getElementById('theme-style');
+  if (darkMode) {
+    styleLink.setAttribute('href', 'style/light-theme.css');
   } else {
-    importManager.loadContent('projects');
+    styleLink.setAttribute('href', 'style/dark-theme.css');
   }
-  importManager.selectNavBarActiveItems(navs);
+  darkMode = !darkMode;
 }
 
-function contactPressed() {
-  importManager.loadContent('contact');
-}
+const router = new Navigo(null, true, '#');
+router.on({
+  [CONTACT]: () => {
+    loadHtml(CONTACT);
+    setFocused(CONTACT);
+  },
+  [PROJECTS]: () => {
+    loadHtml(PROJECTS);
+    setFocused('projects');
+  },
+  [RECIPIECE]: () => {
+    loadHtml(RECIPIECE);
+    setFocused('projects');
+  },
+  [HOME]: () => {
+    loadHtml(HOME);
+    setFocused('home');
+  }
+});
+router.on(() => {
+  loadHtml('home');
+  setFocused('home');
+});
+
+router.resolve();
+

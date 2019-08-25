@@ -1,0 +1,17 @@
+body, html {
+  background: #202020;
+  color: #999999;
+}
+
+a.uk-icon-button {
+  background: #999999;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #999999;
+}
+
+dt:not(a) {
+  color: #999999 !important;
+}

@@ -7,60 +7,61 @@
   <!-- UIkit JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+  <script src="//unpkg.com/navigo@6"></script>
   <title>Steven Rosendahl</title>
 
-  <!-- HTML Files -->
-  <script src="script/import-manager.js"></script>
-  <link id="home-import" rel="import" href="html/home.html">
-  <link id="projects-import" rel="import" href="html/projects/projects.html">
-  <link id="coffee-shop-import" rel="import" href="html/projects/coffee-shop.html">
-  <link id="pxv-import" rel="import" href="html/projects/pxv.html">
-  <link id="recipiece-import" rel="import" href="html/projects/recipiece.html">
-  <link id="contact-import" rel="import" href="html/contact.html">
-
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="style/main.css">
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link href="style/uk-override.css" rel="stylesheet" type="text/css">
+  <link id="theme-style" href="style/dark-theme.css" rel="stylesheet" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 
 <body>
-  <nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left">
-      <ul class="uk-navbar-nav">
-        <li id="home-nav" class="uk-active">
-          <a href="#" onclick="homePressed()">Home</a>
-        </li>
-        <li id="projects-nav">
-          <a href="#" onclick="projectsPressed()">Side Projects</a>
-          <div class="uk-navbar-dropdown">
-            <ul class="uk-nav uk-navbar-dropdown-nav">
-              <li id="recipiece-nav">
-                <a href="#" onclick="projectsPressed('recipiece')">Recipiece</a>
-              </li>
-              <li id="pxv-nav">
-                <a href="#" onclick="projectsPressed('pxv')">PXV</a>
-              </li>
-              <li id="coffee-shop-nav">
-                <a href="#" onclick="projectsPressed('coffee-shop')">Coffee Shop</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li id="contact-nav">
-          <a href="#" onclick="contactPressed()">Contact</a>
-        </li>
-        <li>
-          <a href="https://www.github.com/sjyn/">
-            <span class="uk-icon uk-margin-small-right" uk-icon="icon: github"></span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <li id="home-nav" class="uk-active">
+        <a href="#home">
+          <span class="desktop-nav">Home</span>
+          <span class="mobile-nav uk-icon uk-margin-small-right" uk-icon="icon: home"></span>
+        </a>
+      </li>
+      <li id="projects-nav">
+        <a href="#projects/projects">
+          <span class="desktop-nav">Side Projects</span>
+          <span class="mobile-nav uk-icon uk-margin-small-right" uk-icon="icon: album"></span>
+        </a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li id="recipiece-nav">
+              <a href="#projects/recipiece">Recipiece</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li id="contact-nav">
+        <a href="#contact">
+          <span class="desktop-nav">Contact</span>
+          <span class="mobile-nav uk-icon uk-margin-small-right" uk-icon="icon: comment"></span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.github.com/sjyn/">
+          <span class="uk-icon uk-margin-small-right" uk-icon="icon: github"></span>
+        </a>
+      </li>
+      <li onclick="toggleDarkMode()">
+        <a>
+          <span class="uk-icon uk-margin-small-right" uk-icon="icon: paint-bucket"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-  <div id="main-content"></div>
-
-  <script src="script/index.js"></script>
+<div id="main-content"></div>
+<script src="script/index.js"></script>
 </body>
 </html>

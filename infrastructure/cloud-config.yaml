@@ -1,0 +1,7 @@
+runcmd:
+  - sudo apt update
+  - sudo apt install -y nginx certbot python3-certbot-nginx
+  - sudo ufw allow 'Nginx Full'
+  - sudo ufw delete allow 'Nginx HTTP'
+  - sudo mkdir -p /var/www/srosendahl/html
+  - sudo mkdir -p /var/www/eheavner/html

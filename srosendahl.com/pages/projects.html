@@ -8,6 +8,41 @@
   <body>
     <div class="content-container">
       <div class="projects-header">
+        <h1>Skills</h1>
+        <p>Give me new things to learn.</p>
+      </div>
+      <div class="skills-container">
+        <div class="skill-bubble" tabindex="0">
+          Paint
+          <img title="typescript" class="skill-icon deg0" src="../assets/typescript.svg" />
+          <img title="react" class="skill-icon deg45" src="../assets/react.svg" />
+          <img title="angular" class="skill-icon deg90" src="../assets/angular.svg" />
+          <img title="sass" class="skill-icon deg135" src="../assets/sass.svg" />
+          <img title="latex" class="skill-icon deg180" src="../assets/latex.svg" />
+        </div>
+
+        <div class="skill-bubble" tabindex="0">
+          Glue
+          <img title="python" class="skill-icon deg0" src="../assets/python.svg" />
+          <img title="nodejs" class="skill-icon deg45" src="../assets/nodejs.svg" />
+          <img title="java" class="skill-icon deg90" src="../assets/java.svg" />
+          <img title="lua" class="skill-icon deg135" src="../assets/lua.svg" />
+        </div>
+
+        <div class="skill-bubble" tabindex="0">
+          Cardboard
+          <img title="aws" class="skill-icon deg0" src="../assets/aws.svg" />
+          <img title="terraform" class="skill-icon deg45" src="../assets/terraform.svg" />
+          <img title="redis" class="skill-icon deg90" src="../assets/redis.svg" />
+          <img title="postgres" class="skill-icon deg135" src="../assets/postgres.svg" />
+          <img title="docker" class="skill-icon deg180" src="../assets/docker.svg" />
+          <img title="gcp" class="skill-icon deg225" src="../assets/gcp.svg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="content-container">
+      <div class="projects-header">
         <h1>Projects</h1>
         <p>
           Software is never truly finished.
@@ -44,6 +79,44 @@
           The chamber worked well until the relay busted one day, keeping the heat lamp on and causing the temperature to exceed 120&#176;F.
           Seeing as botulism can take hold of an improperly fermented good, I was forced to dispose of all of the contents and tear down the chamber.
           Eventually, it will be rebuilt with a proper (i.e. not ordered from a shady Chinese Ebay shop) relay.
+        </p>
+      </div>
+
+      <div class="project-container">
+        <h2>Gloomhaven Printing</h2>
+        <p class="project-description">
+          I play a board game called Gloomhaven with my friends.
+          I also own a fleet of 3D Printers, both FDM and SLA.
+          An <a class="contact-link" href="https://www.thingiverse.com/thing:3464688">amazing project on thingiverse</a> allowed me to get started, printing all of the cardboard enemies in resin.
+          Since we use an app to play the game, we didn't need the damage counter, and that meant I could save some printing waste by adapting the models slightly.
+          Then I needed storage for these; I learned OpenSCAD and designed some boxes, and a magnet system to allow the miniatures to sit in the boxes.
+          I also discovered <a class="contact-link" href="https://www.thingiverse.com/thing:3530085">a magnetic hex system</a> that would spruce up the cardboard map tiles too, so I've added that to my laundry list of tasks towards this project.
+          This is an ongoing project, that has required a surprising amount of planning and a not-so-surprising amount of time learning to fix 3D printers.
+          <br/>
+          Other technologies that I have dabbled in with this project include
+          <ul>
+            <li>UNIX OS quirks (udev rules, systemctl, etc)</li>
+            <li>Docker (compose) to orchestrate multiple instances of OctoPrint on a single physical server and to host a Syncthing server for easy uploading of gcode files to said printers</li>
+            <li>Blender to cleanup some of the miniature models</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="project-container">
+        <h2>Other stuff I've played around with and could probably pick up relatively quickly again</h2>
+        <p class="project-description">
+          Sometimes I play with a technology, more so that I can just know of its existence.
+          I am by no mean an expert, but learning things is fun and I'm always up for a challenge.
+          Some examples of these include
+          <ul>
+            <li>Flutter, to spin up a little toy app and see if I could get a google map displaying on both iOS and android from a unified codebase</li>
+            <li>C# and Xamarin. A previous job used Xamarin to build cross platform apps, and I figured I'd be a bit more useful if I could help them out</li>
+            <li>A small networking-in-C++ application, just to get a better understanding of how that stuff works</li>
+            <li>Kotlin instead of Java to build a todo list app in Android. It's a neat language</li>
+            <li>Objective-C, because Swift wasn't a thing quite yet. <code>[[NSAutoreleasePool alloc] init]</code> is seared into my brain, much like <code>public static void main(String[] args)</code></li>
+            <li>Swift, because Objective-C was on its way out (allegedly)</li>
+            <li>MongoDB, which was my first database and will always have a special place in my heart</li>
+          </ul>
         </p>
       </div>
     </div>

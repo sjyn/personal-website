@@ -30,8 +30,17 @@ a:visited {
   color: var(--font-color);
 }
 
-p, span {
+p, span, ul, li, code {
   font-size: 14px;
+}
+
+code {
+  background: #c9c9c9;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  border-radius: .2rem;
 }
 
 .content-container {

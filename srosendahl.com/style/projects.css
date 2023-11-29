@@ -1,3 +1,9 @@
+:root {
+  --skill-bubble-width: 300px;
+  --skill-bubble-icon-size: 40px;
+  --skill-bubble-translate: calc((var(--skill-bubble-width) / 2) - var(--skill-bubble-icon-size));
+}
+
 .projects-header > h1 {
   margin: 0;
   display: inline;
@@ -33,4 +39,68 @@
 
 .contact-link {
   text-decoration: var(--accent-color) underline;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-bubble {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: var(--skill-bubble-width);
+  aspect-ratio: 1 / 1;
+  margin: 48px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+
+.skill-bubble:hover {
+  background-color: inherit;
+  color: var(--background-color);
+  cursor: pointer;
+}
+
+.skill-bubble > .skill-icon {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  top: calc(50% - (var(--skill-bubble-icon-size) / 2)); 
+  left: calc(50% - (var(--skill-bubble-icon-size) / 2));
+  width: var(--skill-bubble-icon-size); 
+  height: var(--skill-bubble-icon-size);
+  transition: opacity 0.5s ease;
+}
+
+.skill-bubble:hover > .skill-icon {
+  opacity: 1;
+}
+
+.deg0 { transform: translate(var(--skill-bubble-translate)); }
+.deg45 { transform: rotate(45deg) translate(var(--skill-bubble-translate)) rotate(-45deg); }
+.deg90 { transform: rotate(90deg) translate(var(--skill-bubble-translate)) rotate(-90deg); }
+.deg135 { transform: rotate(135deg) translate(var(--skill-bubble-translate)) rotate(-135deg); }
+.deg180 { transform: rotate(180deg) translate(var(--skill-bubble-translate)) rotate(-180deg); }
+.deg225 { transform: rotate(225deg) translate(var(--skill-bubble-translate)) rotate(-225deg); }
+.deg315 { transform: rotate(315deg) translate(var(--skill-bubble-translate)) rotate(-315deg); }
+
+@media only screen and (min-width: 300px) and (max-width: 768px){
+  .skill-bubble:focus {
+    background-color: inherit;
+    color: var(--background-color);
+    cursor: pointer;
+  }
+
+  .skill-bubble:focus > .skill-icon {
+    opacity: 1;
+  }
 }
